@@ -4,6 +4,6 @@ import Button from "../components/button.jsx";
 
 ReactDOM.createRoot(document.getElementById('buttonRoot')).render(
     <React.StrictMode>
-        <Button/>
+        <Button ariaLabel="click me">John Doe</Button>
     </React.StrictMode>
 )

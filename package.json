@@ -5,7 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "client:dev": "vite",
-    "server:build": "node server/index.js"
+    "fragments:build": "node server/index.js",
+    "fragments:populate": "go run main.go"
   },
   "keywords": [],
   "author": "",

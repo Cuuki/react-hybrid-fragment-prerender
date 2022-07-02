@@ -5,7 +5,7 @@ const Button = ({ariaLabel, children}) => (
         aria-label={ariaLabel}
         onClick={() => alert('Button click')}
     >
-        Hello{' '}{children}
+        Hello{' '}{children}!
     </button>
 )
 
