@@ -2,11 +2,14 @@ import React from 'react';
 import Button from "./button";
 
 const ButtonContainer = () => (
-    <Button
-        ariaLabel={'{{ .AriaLabel }}'}
-    >
-        {'{{ .Name }}'}
-    </Button>
+    <div id="buttonRoot">
+        <Button
+            ariaLabel={'{{ .AriaLabel }}'}
+        >
+            {'{{ .Name }}'}
+        </Button>
+    </div>
+
 )
 
 export default ButtonContainer

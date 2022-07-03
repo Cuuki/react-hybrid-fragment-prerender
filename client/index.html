@@ -7,7 +7,14 @@
     <title>Vite App</title>
 </head>
 <body>
-<div id="buttonRoot"></div>
-<script type="module" src="/hydrate.jsx"></script>
+<div id="buttonRoot">
+    <button aria-label="Click me">Hello John Doe!</button>
+</div>
+<script type="module">import hydrate from "./hydrate";
+import Button from "../components/button";
+
+hydrate(Button, {ariaLabel: 'Click me'}, 'John Doe', 'buttonRoot')
+</script>
+
 </body>
 </html>

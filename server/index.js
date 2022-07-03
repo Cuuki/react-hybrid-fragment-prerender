@@ -9,17 +9,29 @@ const path = require('path')
 const fs = require('fs');
 const fsAsync = require('fs/promises');
 
-const fragmentDir = path.resolve(`${process.cwd()}/out/fragment`);
+const FRAGMENT_DIR = path.resolve(`${process.cwd()}/out/fragment`);
+const CLIENT_DIR = path.resolve(`${process.cwd()}/client`);
 
 (async () => {
     try {
-        const content = ReactDOMServer.renderToString(
+        let content = ReactDOMServer.renderToString(
             React.createElement(Button, {ariaLabel: 'label text'})
         );
-        if (!fs.existsSync(fragmentDir)) {
-            fs.mkdirSync(fragmentDir, {recursive: true});
+
+        if (!fs.existsSync(FRAGMENT_DIR)) {
+            fs.mkdirSync(FRAGMENT_DIR, {recursive: true});
         }
-        await fsAsync.writeFile(`${fragmentDir}/button.gohtml`, content);
+
+        try {
+            const hydrate = fs.readFileSync(`${CLIENT_DIR}/hydrate-button.jsx`, 'utf8');
+
+            content += `<script type="module">${hydrate}</script>`
+        } catch (err) {
+            console.error(err);
+        }
+
+
+        await fsAsync.writeFile(`${FRAGMENT_DIR}/button.gohtml`, content);
     } catch (err) {
         console.log(err);
     }
