@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "./button";
 
-const ButtonContainer = () => (
+export default () => (
     <div id="buttonRoot">
         <Button
             ariaLabel={'{{ .AriaLabel }}'}
@@ -9,7 +9,4 @@ const ButtonContainer = () => (
             {'{{ .Name }}'}
         </Button>
     </div>
-
 )
-
-export default ButtonContainer

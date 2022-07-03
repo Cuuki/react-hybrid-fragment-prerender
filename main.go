@@ -2,7 +2,7 @@ package main
 
 import (
     "os"
-    "html/template"
+    "text/template"
 )
 
 func main() {
