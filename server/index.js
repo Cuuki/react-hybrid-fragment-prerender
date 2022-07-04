@@ -32,7 +32,7 @@ const COMPONENT_DIR = path.resolve(`${process.cwd()}/components`);
             minify: true,
             bundle: true,
             define: {
-                'process.env.NODE_ENV': "'production'", 'process.env.BUTTON_DATA': JSON.stringify(DATA),
+                'process.env.NODE_ENV': "'production'", 'process.env.FRAGMENT_DATA': JSON.stringify(DATA),
             }
         }).catch(() => process.exit(1));
 

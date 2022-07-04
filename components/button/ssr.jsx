@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import ReactDOMServer from "react-dom/server";
-import Container from './container'
+import Container from "./container";
 
 const getButtonServerString = (data) => ReactDOMServer.renderToString(<Container
     ariaLabel={data.body.labelText}
