@@ -13,7 +13,7 @@ dist-ssr
 *.local
 
 # server output
-out/fragment
+client/out/fragment
 
 # Editor directories and files
 .vscode/*

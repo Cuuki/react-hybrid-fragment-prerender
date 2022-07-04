@@ -1,12 +1,12 @@
 import React from 'react';
 import Button from "./button";
 
-export default () => (
+export default ({ariaLabel, children}) => (
     <div id="buttonRoot">
         <Button
-            ariaLabel={'{{ .AriaLabel }}'}
+            ariaLabel={ariaLabel}
         >
-            {'{{ .Name }}'}
+            {children}
         </Button>
     </div>
 )
